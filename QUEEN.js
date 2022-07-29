@@ -13,8 +13,8 @@ async function Amazone () {
     const conn = new WAConnection();
     const Session = new StringSession();  
     conn.version = [2, 2140, 12]
-    conn.logger.level = 'warn';
-    conn.regenerateQRIntervalMs = 50000;
+    conn.logger: pino({ level: 'silent' }),
+    conn.printQRInTerminal: true ;
     
     conn.on('connecting', async () => {
         console.log(`${chalk.green.bold('Amazone')}${chalk.blue.bold('Alexa')}
